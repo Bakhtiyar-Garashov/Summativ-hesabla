@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>KSQ, BSQ Hesablanması</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
+		rel="stylesheet" />
+
+</head>
+
+<body style="padding-top:10px;">
+	<div class="container body-content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<form method="post" action="" style="margin-top:15px;">
+						<div id="ksq_div">
+							<div class="form-group">
+								<label for="KSQ1">KSQ 1</label>
+								<input class="form-control ksq" type="number" name="ksq[]" value=""
+									placeholder="Bal daxil edin" min="0" max="100" data-index="1" />
+							</div>
+							<div class="form-group">
+								<label for="KSQ1">KSQ 2</label>
+								<input class="form-control ksq" type="number" name="ksq[]" value=""
+									placeholder="Bal daxil edin" min="0" max="100" data-index="2" />
+							</div>
+							<div class="form-group">
+								<label for="KSQ1">KSQ 3</label>
+								<input class="form-control ksq" type="number" name="ksq[]" value=""
+									placeholder="Bal daxil edin" min="0" max="100" data-index="3" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="BSQ">BSQ</label>
+							<input class="form-control bsq" type="number" id="bsq" name="bsq" value="" min="0" max="100"
+								placeholder="Bal daxil edin (əgər varsa)" data-index="1" />
+						</div>
+
+						<div class="form-group">
+							<button type="button" class="btn btn-primary add-ksq">KSQ əlavə et</button>
+							<button type="button" class="btn btn-primary remove-ksq">KSQ azalt</button>
+							<button class="btn btn-success calculate">Hesabla</button>
+						</div>
+
+						<div class="form-group result" style="font-weight:bold;color: darkgreen;font-size: 16px;"></div>
+
+					</form>
+					<div class="row result">
+						<h3 style="color:green;"></h3>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" value="KSQ" id="lang1" />
+	<input type="hidden" value="BSQ" id="lang2" />
+	<input type="hidden" value="Bal daxil edin" id="lang6" />
+	<input type="hidden" value="Nəticə" id="lang11" />
+	<input type="hidden" value="bal" id="lang12" />
+	<input type="hidden" value="Qiymət" id="lang13" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="{% static 'mekteb.js' %}"></script>
+</body>
+
+</html>
